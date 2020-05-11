@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "proxy": "http://localhost:8080",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:client:dev": "webpack-dev-server --mode development --config webpack.config.dev.babel.js --open",
     "start:server:dev": "nodemon src/server/server.js",
-    "start": "npm run start:server:dev > /dev/null | npm run start:client:dev",
+    "start": "concurrently \"npm run start:server:dev\" \"npm run start:client:dev\"",
     "build": "webpack --config webpack.config.prod.babel.js"
   },
   "author": "Veronika G.",
@@ -43,6 +44,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^4.0.0",
+    "concurrently": "^5.2.0",
     "core-js": "^3.0.0",
     "express": "^4.17.1",
     "react": "^16.13.1",
