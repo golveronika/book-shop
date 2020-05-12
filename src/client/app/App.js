@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Header from './components/Header'
 import Lside from './components/Lside'
+import Articles from './components/Articles'
 
 const App = () => {
 
@@ -21,7 +22,7 @@ const App = () => {
     <Header />
     <main className="main-container">
         <Lside />
-        <section>Главная инфа</section>
+        <Articles />
     </main>
     </>
   );

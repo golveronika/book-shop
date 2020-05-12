@@ -1,0 +1,172 @@
+.article-container{
+    width: 100%;
+    margin: 20px 40px;
+
+    &__category {
+        margin-bottom: 15px;
+    }
+
+    .articles {
+        height: 40px;
+        &__title {
+            font-size: 20px;
+            font-weight: 300;
+        }
+    }
+
+    .article-list {
+        display: flex;
+        flex-direction: column;
+        &__container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            min-height: 45px;
+            align-items: center;
+            background-color: $light-color;
+            &__name {
+                padding: 0 0 0 10px;
+                font-size: 12px;
+                flex-grow: 1;
+                flex-wrap: wrap;
+                background-color: $base-color;
+                align-items: center;
+                display: flex;
+                min-height: 45px;
+            }
+            &__cost {
+                
+                height: 100%;
+                width: 100px;
+                min-width: 100px;
+                padding: 0 5px;
+                align-items: center;
+                display: flex;
+                justify-content: flex-end;
+                font-size: 15px;
+                font-weight: 400;
+
+            }
+            &__add {
+                width: 70px;
+                min-width: 70px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                background-color: $base-color;
+                min-height: 45px;
+
+                .add-to-cart_svg__icon-add-to-cart {
+                    width: 30px;
+                    height: 30px;
+                    fill: $blue-color;
+                    transition: fill 0.5s 0s ease;
+                }
+                .add-to-cart-link:hover .add-to-cart_svg__icon-add-to-cart {
+                    fill: $green-color;
+                    transition: fill 0.5s 0s ease;
+                }
+            }
+            
+        }
+    }
+}
+
+.article-container .articles{
+    padding: 5px 20px;
+    position: relative;
+    z-index: 20;
+    display: block;
+    background-color: $light-color;
+    cursor: pointer;
+    color: $text-color;
+    line-height: 33px;
+    //box-shadow: 0px 0px 0px 1px rgba(155, 155, 155, 0.3), 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.article-container input:checked + .articles,
+.article-container input:checked + .articles:hover{
+    background: $light-color;
+    text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+    //box-shadow:  0px 0px 0px 1px rgba(155,155,155,0.3), 0px 2px 2px rgba(0,0,0,0.1);
+}
+
+.article-container input:checked + .articles:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 13px;
+    top: 7px;
+    transition: transform 0.5s 0s ease;
+    transform: rotate(180deg);
+    background:  url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8' standalone='no'?%3e%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3csvg width='100%25' height='100%25' viewBox='0 0 512 512' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3e%3cpath d='M256.006,385.487c-15.367,0 -30.732,-5.848 -42.433,-17.547l-207.701,-207.27c-7.818,-7.802 -7.831,-20.465 -0.029,-28.284c7.804,-7.819 20.466,-7.832 28.285,-0.029l207.715,207.284c7.813,7.812 20.5,7.813 28.299,0.015l207.73,-207.299c7.82,-7.802 20.482,-7.79 28.285,0.029c7.802,7.819 7.789,20.482 -0.029,28.284l-207.717,207.284c-11.686,11.687 -27.047,17.533 -42.405,17.533Z' style='fill:%23555;fill-rule:nonzero;'/%3e%3c/svg%3e") no-repeat center center; 
+}
+
+.article-container .articles:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 13px;
+    top: 7px;
+    transition: transform 0.5s 0s ease;
+    transform: rotate(0);
+    background:  url("data:image/svg+xml;charset=UTF-8,%3c?xml version='1.0' encoding='UTF-8' standalone='no'?%3e%3c!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3e%3csvg width='100%25' height='100%25' viewBox='0 0 512 512' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' xmlns:serif='http://www.serif.com/' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3e%3cpath d='M256.006,385.487c-15.367,0 -30.732,-5.848 -42.433,-17.547l-207.701,-207.27c-7.818,-7.802 -7.831,-20.465 -0.029,-28.284c7.804,-7.819 20.466,-7.832 28.285,-0.029l207.715,207.284c7.813,7.812 20.5,7.813 28.299,0.015l207.73,-207.299c7.82,-7.802 20.482,-7.79 28.285,0.029c7.802,7.819 7.789,20.482 -0.029,28.284l-207.717,207.284c-11.686,11.687 -27.047,17.533 -42.405,17.533Z' style='fill:%23555;fill-rule:nonzero;'/%3e%3c/svg%3e") no-repeat center center; 
+}
+
+.article-container input{
+    display: none;
+}
+
+.article-container .article-list{
+    margin-top: -1px;
+    overflow: hidden;
+    height: 0px;
+    opacity: 0;
+    position: relative;
+    z-index: 10;
+	transition: height 0.5s ease-in-out, box-shadow 0.6s opacity 0.5s linear;
+}
+.article-container input:checked ~ .article-list{
+	transition: opacity 0.3s ease-in-out, box-shadow 0.6s linear;
+    //box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
+   // max-height: 10000px;
+   opacity: 1;
+   height: auto;
+}
+
+.article-container .article-list p {
+    color: $text-color;
+    line-height: 23px;
+    font-size: 14px;
+    padding: 20px;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+}
+
+@media screen and (max-width: $bp-sm) { 
+    .article-container{
+        width: calc(100% - 80px);
+        margin: 20px 40px;
+        .article-list__container {
+            &__name {
+
+                font-size: 11px;
+            }
+
+            &__cost {
+                min-width: 75px;
+                width: 75px;
+                font-size: 12px;
+            }
+
+            &__add {
+                width: 35px;
+                min-width: 35px;
+            }
+
+
+        } 
+    }
+
+}

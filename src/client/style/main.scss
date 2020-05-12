@@ -3,7 +3,11 @@
 @import "./partials/header.scss";
 @import "./partials/left-section.scss";
 @import "./partials/custom-checkbox.scss";
+@import "./partials/dropdown.scss";
 
+html,body {
+    height:100%;
+}
 
 * {
     margin: 0;
