@@ -1,3 +1,5 @@
+
+/* colors */
 $base-color: #FFFFFF;
 $dark-color: #6D7E97;
 $light-color: #F1F1F1;
@@ -5,5 +7,11 @@ $text-color: #555555;
 $green-color: #9CE09F;
 $red-color: #DF526B;
 
+/* typography */
 $font-common: sans-serif;
+
+/* breakpoints */
+$bp-xs: 480px;
+$bp-sm: 768px;
+$bp-md: 1200px;
 

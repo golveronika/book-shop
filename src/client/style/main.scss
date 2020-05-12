@@ -19,3 +19,12 @@
     display: flex;
     height: calc(100vh - 85px);
 }
+
+@media screen and (max-width: $bp-sm) { 
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+}

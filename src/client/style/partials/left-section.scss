@@ -51,3 +51,39 @@
         }
     }
 }
+
+
+@media screen and (max-width: $bp-sm) { 
+
+    .section-left {
+        width: 100%;
+        .container .excanche {
+            &__text {
+                font-size: 12px;
+            }
+        }
+
+        .custom-checkbox {
+            margin: 3px 4px;
+        }
+
+        .container .filter {
+            margin-top: 5px;
+        }
+        .container .filter__title {
+            font-size: 14px;
+            padding: 5px 0;
+        }
+        .container .filter__params {
+            flex-direction: row;
+            flex-wrap: wrap;
+            .custom-checkbox>span {
+                font-size: 11px;
+            }
+            .custom-checkbox>span::before {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
