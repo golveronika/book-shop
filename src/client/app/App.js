@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Header from './components/Header'
+import Lside from './components/Lside'
 
 const App = () => {
 
@@ -18,10 +19,10 @@ const App = () => {
   return (
     <>
     <Header />
-    <div className="App">
-        Hello Veronika!
-        Helloooo
-    </div>
+    <main className="main-container">
+        <Lside />
+        <section>Главная инфа</section>
+    </main>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Icon_cart from '../../../img/shopping-cart.svg' 
 import Icon_loupe from '../../../img/loupe.svg' 
 
@@ -20,6 +20,9 @@ const Header = () => {
 
             <div className="cart-container__cart">
                 <Icon_cart />
+                <div className="cart-container__counter">
+                    2
+                </div>
             </div>
         </div>
 
