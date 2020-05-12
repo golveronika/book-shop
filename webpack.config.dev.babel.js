@@ -22,7 +22,7 @@ module.exports = {
       '@babel/polyfill',
       './src/client/index.js',
     //   'bootstrap/dist/css/bootstrap.min.css',
-      './src/client/css/main.scss',
+      './src/client/style/main.scss',
     ],
     // bundle: ['jquery', 'popper.js', 'bootstrap'],
   },
@@ -85,6 +85,10 @@ module.exports = {
           'img-loader',
         ],
       },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      }
     ],
   },
   plugins: [
@@ -99,9 +103,11 @@ module.exports = {
     //   'window.jQuery': 'jquery',
     //   Popper: ['popper.js', 'default'],
     // }),
-    // new CopyWebpackPlugin([
-    //   { from: 'src/img', to: 'img' },
-    // ]),
+    new CopyWebpackPlugin([
+       { 
+         from: 'src/client/img/', 
+         to: 'img' },
+     ]),
     new webpack.SourceMapDevToolPlugin({
       filename: '[name].js.map',
       exclude: ['bundle.js'],

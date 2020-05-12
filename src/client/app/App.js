@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Header from './components/Header'
 
 const App = () => {
 
@@ -15,10 +16,13 @@ const App = () => {
 
 
   return (
+    <>
+    <Header />
     <div className="App">
         Hello Veronika!
         Helloooo
     </div>
+    </>
   );
 }
 

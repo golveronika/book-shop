@@ -1,0 +1,76 @@
+
+ .header-page {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: $base-color;
+    height: 85px;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        font-family: $font-common;
+        font-size: 23px;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        color: $text-color;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding-left: 50px;
+        &__link {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .cart-container {
+        display: flex;
+        padding-right: 50px;
+        &__cart {
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            padding-left: 10px;
+        }
+        &__cart .shopping-cart_svg__cart-icon {
+            fill: $text-color;
+            transition: fill 0.5s 0s ease;
+        }
+        &__cart:hover .shopping-cart_svg__cart-icon {
+            fill: $red-color;
+            transition: fill 0.5s 0s ease;
+        }
+
+        &__search {
+            display: flex;
+            &:hover .cart-container__search__input {
+                opacity: 1;
+                transition: opacity 0.5s 0s ease;
+            }
+            &__icon {
+                width: 30px;
+                height: 30px;
+                padding-left: 10px;
+                cursor: pointer;
+                .loupe_svg__loupe-icon {
+                    fill: $text-color;
+                    transition: fill 0.5s 0s ease;
+                }
+                &:hover .loupe_svg__loupe-icon {
+                    fill: $red-color;
+                    transition: fill 0.5s 0s ease;
+                }
+            }
+            &__input {
+                border: 1px solid #b3b3b3;
+                outline: none;
+                padding: 7px;
+                opacity: 0;
+                transition: opacity 0.5s 0s ease;
+            }
+        }
+    }
+
+
+ }
