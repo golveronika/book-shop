@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fethDataAsync, setFilter, setDataFiltred} from './redux/actions'
+import { fethDataAsync, setFilter, setDataFiltred, addToCart, delFromCart } from './redux/actions'
 
 import Header from './components/Header'
 import Lside from './components/Lside'
@@ -18,8 +18,10 @@ const App = () => {
         rise: false
       }
     );
+  const [cartVisible, setCartVisible] = useState(false);
   
   // Redux state
+  const cart = useSelector(state => state.cart)
   const dataJSON = useSelector(state => state.data)
   const dataFiltred = useSelector(state => state.dataFiltred)
   const filter = useSelector(state => state.filter)
@@ -68,9 +70,30 @@ const App = () => {
     dispatch(setDataFiltred(new_filter, dataJSON))
   }
 
+
+  const handleAddToCart = (article, max_count, count) => {
+    console.log('article', article)
+    dispatch(addToCart({
+      article,
+      max_count,
+      count
+    }))
+  }
+
+  const handleDelFromCart = (id_art) => {
+    dispatch(delFromCart(id_art))
+  }
+
+
+  delFromCart
+
   return (
     <>
-    <Header />
+    <Header 
+      setCartVisible={setCartVisible}
+      cartVisible={cartVisible}
+      cart={cart}
+    />
     <main className="main-container">
         <Lside 
           groups={groups}
@@ -81,9 +104,16 @@ const App = () => {
           items={dataFiltred} 
           groups={groupsFiltred}
           exchange={exchange}
+          handleAddToCart={handleAddToCart}
         />
     </main>
-    <Cart />
+    <Cart 
+      cartVisible={cartVisible}
+      cart={cart}
+      exchange={exchange}
+      handleAddToCart={handleAddToCart}
+      handleDelFromCart={handleDelFromCart}
+    />
     </>
   );
 }

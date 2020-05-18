@@ -1,7 +1,19 @@
 
 import axios from 'axios'
 
-// NEW **************************** ****************** **************
+export const delFromCart = (id_art) => {
+    return {
+        type: 'DEL_FROM_CART',
+        id_art,
+    }
+}
+
+export const addToCart = (article) => {
+    return {
+        type: 'ADD_TO_CART',
+        article,
+    }
+}
 
 export const setDataFiltred = (filter, data) => {
     return {

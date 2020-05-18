@@ -8,6 +8,10 @@ function unique(arr) {
     return result
   }
 
+function roundCost(cost) {
+    return Math.round(cost * 100) / 100;
+}
+
 function randomizeFloat(min, max) {
     if (max == null) {
           if (min <= 0) {
@@ -23,9 +27,9 @@ function randomizeFloat(min, max) {
   }
 
   let result = min + (max - min) * Math.random();
-  result = Math.round(result * 100) / 100;
+  result = roundCost(result);
 
   return result
 }
 
-export { unique, randomizeFloat };
+export { unique, randomizeFloat, roundCost };

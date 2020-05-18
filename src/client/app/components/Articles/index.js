@@ -1,11 +1,8 @@
 import React from 'react'
 import Icon_cart from '../../../img/add-to-cart.svg'
+import { roundCost } from '../../utils'
 
-const Articles = ({ items, groups, exchange }) => {
-
-    function roundCost(cost) {
-        return Math.round(cost * 100) / 100;
-    }
+const Articles = ({ items, groups, exchange, handleAddToCart }) => {
 
   return (
     <section className="article-container">
@@ -22,7 +19,15 @@ const Articles = ({ items, groups, exchange }) => {
                             <article className="article-list__container" key={`art_${item.id}`}>
                                 <div className="article-list__container__name">{`${item.name} (${item.rest})`}</div>
                                 <div className="article-list__container__cost">{`${roundCost(item.price_USD * exchange.cost)} ₽`}</div>
-                                <div className="article-list__container__add"><a className="add-to-cart-link" href="#"><Icon_cart /></a></div>
+                                <div className="article-list__container__add">
+                                    <a 
+                                        className="add-to-cart-link" 
+                                        href="#"
+                                        onClick={() => handleAddToCart(item, item.rest, null)}
+                                    >
+                                        <Icon_cart />
+                                    </a>
+                                </div>
                             </article>
                         ))}
                     </div>

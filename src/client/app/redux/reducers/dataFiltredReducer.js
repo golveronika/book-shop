@@ -1,10 +1,7 @@
 
 const dataFiltredReducer = ( state = [], action ) => {
-    console.log(action);
     switch (action.type) {
         case 'SET_DATA_FILTER': 
-
-        console.log(filter);
             const {data, filter} = action
             let new_state = data;
             if (filter.length > 0) {

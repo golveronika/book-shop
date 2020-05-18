@@ -2,7 +2,7 @@ import React from 'react'
 import Icon_cart from '../../../img/shopping-cart.svg' 
 //import Icon_loupe from '../../../img/loupe.svg' 
 
-const Header = () => {
+const Header = ({setCartVisible, cartVisible, cart}) => {
 
   return (
     <header className="header-page">
@@ -18,11 +18,9 @@ const Header = () => {
                 </div>                
             </div> */}
 
-            <div className="cart-container__cart">
+            <div className="cart-container__cart" onClick={() => setCartVisible(!cartVisible)}>
                 <Icon_cart />
-                <div className="cart-container__counter">
-                    2
-                </div>
+                {(cart.count > 0) ? (<div className="cart-container__counter"> {cart.count}</div>) : ('')}
             </div>
         </div>
 
