@@ -16,8 +16,8 @@ app.use(function(req, res, next) {
     next();
   });
 
-app.get('/', function (req, res) {
-    res.send(shop.getData());
+app.get('/getData', function (req, res) {
+    res.send(shop.getGoods());
   });
 
 app.listen(port, () => {

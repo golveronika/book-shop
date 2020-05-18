@@ -1,6 +1,6 @@
 import React from 'react'
 import Icon_cart from '../../../img/shopping-cart.svg' 
-import Icon_loupe from '../../../img/loupe.svg' 
+//import Icon_loupe from '../../../img/loupe.svg' 
 
 const Header = () => {
 
@@ -11,12 +11,12 @@ const Header = () => {
 
         <div className="cart-container">
 
-            <div className="cart-container__search">
-                <input className="cart-container__search__input" type="text"/>
+            {/* <div className="cart-container__search">
+                <input className="cart-container__search__input" type="text"/>  
                 <div className="cart-container__search__icon">
                     <Icon_loupe />
                 </div>                
-            </div>
+            </div> */}
 
             <div className="cart-container__cart">
                 <Icon_cart />
